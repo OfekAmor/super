@@ -195,11 +195,10 @@ itemInput.addEventListener('input', function (event) {
     const searchTerm = event.target.value.trim();
 
     // סינון המוצרים שמכילים את המחרוזת המוזנת על ידי המשתמש
-    const filteredProducts = allProducts.filter(product => partialSearch(searchTerm, product.name));
+    const filteredProducts = products.filter(product => partialSearch(searchTerm, product.name));
 
-    // הצגת התוצאות במקום מסוים (לדוג', dropdown, תחת ה-input, וכדומה)
-    displayOptions(filteredProducts);
 });
+
 
 function filterItemsByCategory(items, categoryProducts) {
     return items.filter(item => {
