@@ -46,10 +46,9 @@ li {
   border: none;
   padding: 5px 10px;
   cursor: pointer;
-  opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
 
-li:hover .delete-button {
+li:hover .delete-button, li .delete-button {
   opacity: 1;
 }
