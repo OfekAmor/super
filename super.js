@@ -199,7 +199,6 @@ itemInput.addEventListener('input', function (event) {
 
 });
 
-
 function filterItemsByCategory(items, categoryProducts) {
     return items.filter(item => {
         const partialItemName = item.split(/\d+/)[0].trim(); // לקחת את המחרוזת לפני המספר ולהסיר רווחים מסוף
@@ -213,23 +212,10 @@ function updateShoppingList(items) {
     items.forEach(item => shoppingList.appendChild(createListItem(item)));
 }
 
-// הוספת אירוע click לאלמנט ה- ul
-shoppingList.addEventListener('click', function(event) {
-    const target = event.target;
+function clearAll() {
+    const shoppingList = document.getElementById('shoppingList');
+    shoppingList.innerHTML = '';
+    currentList = [];
+}
 
-    // בדיקה אם הלחיצה הייתה על פריט ברשימה (li) ולא על אלמנט אחר
-    if (target.tagName === 'LI') {
-        // הפוך את הפריט לניתן לעריכה
-        target.contentEditable = true;
-        target.focus(); // נכנס למצב עריכה
-
-        // הוספת אירוע blur למערך הנתונים כשסיימנו לערוך
-        target.addEventListener('blur', function() {
-            target.contentEditable = false; // לא ניתן לערוך יותר
-
-            // עדכון הערך במערכת הנתונים (אני מניח שהמשתנה currentList מכיל רשימת המוצרים)
-            const index = Array.from(shoppingList.children).indexOf(target);
-            currentList[index] = target.textContent.trim();
-        });
-    }
-});
+// ...
