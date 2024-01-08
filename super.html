@@ -10,12 +10,16 @@
     <div id="app">
         <h1>רשימת קניות</h1>
         <input type="text" id="shoppingListInput" placeholder="הזן רשימת קניות">
-        <button onclick="addItem()">הוסף</button>
-        <button onclick="orderShoppingList()">סדר רשימה</button>
-
-
+        <div class="button-row">
+          
+          <button onclick="clearAll()">מחק הכל</button>
+          <button onclick="addItem()">הוסף פריט</button>
+          <button onclick="orderShoppingList()" id="fixedList">סדר רשימה</button>
+        </div>
+        
         <ul id="shoppingList"></ul>
-    </div>
+      </div>
+      
 
     <script src="super.js"></script>
 </body>
