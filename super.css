@@ -1,9 +1,8 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   background-color:#a372ff ;
   margin: 0;
   padding: 0;
-  font-family:Arial, Helvetica, sans-serif;
   font-size: 20px;
   color: #000000;
 }
@@ -92,4 +91,37 @@ h1 {
   background-color: #9c00bb;
   border-radius: 10px 0 10px 0;
   color: #ffffff;
+}
+@keyframes itemAdded {
+  0% {
+    background-color: #d110f8;
+    transform: scale(1);
+  }
+  50% {
+    background-color: #b207c9;
+    transform: scale(1.1);
+  }
+  100% {
+    background-color: #a372ff;
+    transform: scale(1);
+  }
+}
+
+li.added {
+  animation: itemAdded 1s ease;
+}
+@keyframes itemRemoved {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+    background-color: #e74c3c; /* צבע אדום במהלך האנימציה */
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
 }
