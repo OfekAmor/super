@@ -8,8 +8,9 @@
 </head>
 <body>
     <div id="app">
-        <h1>רשימת קניות</h1>
-        <input type="text" id="shoppingListInput" placeholder="הזן רשימת קניות">
+  
+      <h1>רשימת קניות</h1>
+        <input type="text" id="shoppingListInput" maxlength="25" placeholder="הזן רשימת קניות">
         <div class="button-row">
           
           <button onclick="clearAll()">מחק הכל</button>
@@ -17,7 +18,9 @@
           <button onclick="orderShoppingList()" id="fixedList">סדר רשימה</button>
         </div>
         
+
         <ul id="shoppingList"></ul>
+        
       </div>
       
 
